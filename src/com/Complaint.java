@@ -1,3 +1,4 @@
+
 package com;
 import java.sql.*;
 
@@ -65,8 +66,8 @@ public class Complaint {
 			 if (con == null) {
 				 return "Error while connecting to the database for viewing complaints!"; 
 			 } 
-			 output = "<table border='1'><tr>"
-					+ "<th>Complaint ID</th>"
+			 output = "<table style = 'background-color: #8c8c8c; border: 2; border-color: black; padding: 2px'><tr>"
+					+ "<th style = 'color: black; margin-left: 10px; border-color: black'>Complaint ID</th>"
 			 		+ "<th>Sender Name</th>"
 			 		+ "<th> Recipient Department</th>" 
 			 		+ "<th>Email Address</th>" 
@@ -89,16 +90,16 @@ public class Complaint {
 				 
 			 
 				// Add into the html table
-				 output += "<tr><td><input id='hidItemIDUpdate'name='hidItemIDUpdate'type='hidden' value='" + ComplaintID
+				 output += "<tr><td style = 'word-break: break-all;'><input id='hidItemIDUpdate'name='hidItemIDUpdate'type='hidden' value='" + ComplaintID
 				  + "'>" + ComplaintID + "</td>";
-				 output += "<td>" + SenderName + "</td>";
-				 output += "<td>" + RecipientDept + "</td>";
-				  output += "<td>" + EmailAddress + "</td>";
-				  output += "<td>" + Subject + "</td>";
-				  output += "<td>" + Complaint + "</td>";
-				  output += "<td>" + Response + "</td>";
+				 output += "<td style = 'width: 210px'>" + SenderName + "</td>";
+				 output += "<td style = 'width: 210px'>" + RecipientDept + "</td>";
+				  output += "<td style = 'width: 180px'>" + EmailAddress + "</td>";
+				  output += "<td style = 'width: 210px'>" + Subject + "</td>";
+				  output += "<td style = 'width: 210px'>" + Complaint + "</td>";
+				  output += "<td style = 'width: 210px'>" + Response + "</td>";
 				// buttons
-				  output += "<td><input name='btnUpdate'type='button' value='Update'class='btnUpdate btn btn-secondary'></td>"+ "<td><input name='btnRemove'type='button' "
+				  output += "<td style = 'width: 210px'><input name='btnUpdate'type='button' value='Update'class='btnUpdate btn btn-secondary'></td>"+ "<td style = 'width: 210px'><input name='btnRemove'type='button' "
 				  		+ "value='Remove'class='btnRemove btn btn-danger'data-itemid='"
 						  + ComplaintID + "'>" + "</td></tr>"; 
 

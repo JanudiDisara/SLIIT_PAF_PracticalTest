@@ -1,5 +1,7 @@
+
 $(document).ready(function()
 {
+$("#response").prop('disabled', true);    
 if ($("#alertSuccess").text().trim() == "")
  {
  $("#alertSuccess").hide();
@@ -9,6 +11,7 @@ if ($("#alertSuccess").text().trim() == "")
 // SAVE ============================================
 $(document).on("click", "#btnSave", function(event)
 {
+
 // Clear alerts---------------------
  $("#alertSuccess").text("");
  $("#alertSuccess").hide();
@@ -71,14 +74,20 @@ if (status == "success")
 // UPDATE==========================================
 $(document).on("click", ".btnUpdate", function(event)
 {
+$("#senderName").prop('disabled', true);     
+$("#recipientDept").prop('disabled', true);     
+$("#email").prop('disabled', true);     
+$("#subject").prop('disabled', true); 
+$("#complaint").prop('disabled', true);     
+$("#response").prop('disabled', false);   
 
  $("#hidItemIDSave").val($(this).closest("tr").find('#hidItemIDUpdate').val());
- $("#senderName").val($(this).closest("tr").find('td:eq(0)').text());
- $("#recipientDept").val($(this).closest("tr").find('td:eq(1)').text());
- $("#email").val($(this).closest("tr").find('td:eq(2)').text());
- $("#subject").val($(this).closest("tr").find('td:eq(3)').text());
- $("#complaint").val($(this).closest("tr").find('td:eq(4)').text());
- $("#response").val($(this).closest("tr").find('td:eq(5)').text());
+ $("#senderName").val($(this).closest("tr").find('td:eq(1)').text());
+ $("#recipientDept").val($(this).closest("tr").find('td:eq(2)').text());
+ $("#email").val($(this).closest("tr").find('td:eq(3)').text());
+ $("#subject").val($(this).closest("tr").find('td:eq(4)').text());
+ $("#complaint").val($(this).closest("tr").find('td:eq(5)').text());
+ $("#response").val($(this).closest("tr").find('td:eq(6)').text());
 });
 
 
