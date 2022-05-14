@@ -73,7 +73,8 @@ public class Complaint {
 			 		+ "<th>Email Address</th>" 
 			 		+ "<th>Subject</th>"
 			 		+ "<th>Complaint</th>"
-			 		+ "<th>Response</th></tr>"; 
+			 		+ "<th>Response</th>"
+			 		+ "<th>Action</th></tr>"; 
 	 
 			 String query = "SELECT * FROM complaint"; 
 			 Statement stmt = con.createStatement(); 
@@ -119,6 +120,7 @@ public class Complaint {
 	 //Respond to complaints
 	 public String AddResponse (String ComplaintID, String Response) {
 		 String output = "";
+		 String decodedmon = java.net.URLDecoder.decode(Response);
 		 try {
 			 Connection con = connect();
 			 if (con == null) {
@@ -129,7 +131,7 @@ public class Complaint {
 			 PreparedStatement preparedStmt = con.prepareStatement(query);
 			 
 			 //Binding values
-			 preparedStmt.setString(1, Response);
+			 preparedStmt.setString(1, decodedmon);
 			 preparedStmt.setInt(2, Integer.parseInt(ComplaintID));
 			 //Execute the statement
 			 preparedStmt.execute();

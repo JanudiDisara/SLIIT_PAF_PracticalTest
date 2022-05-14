@@ -19,7 +19,10 @@
 		<h1 style="font-size:34px; color:black; font-weight:bold;"> MAKE COMPLAINTS </h1>
 		</center>
 		<br><br>
-	
+		<center>
+			<h3 style="font-size:16px; color:black; "> Please post your complaints here. We will reach out to you as soon as possible. Thank you! </h3>
+		</center>
+		<br>
 		<form id="formItem" name="formItem">
 	 		<h2 style="font-size:18px; color:black;">Sender Name:</h2>
 	 		<input style="border-color: black; border-width: 2px" id="senderName" name="senderName" type="text" class="form-control form-control-sm">
@@ -38,7 +41,7 @@
 			</div>
 			
 	 		<h2 style="font-size:17px; color:black;">Email Address:</h2>
-	 		<input style="border-color: black; border-width: 2px" id="email" name="email" type="text"
+	 		<input style="border-color: black; border-width: 2px" id="email" name="email" type="email" type="text"
 	 		class="form-control form-control-sm">
 	 		<br> 
 	 		<h2 style="font-size:17px; color:black;">Subject:</h2>
@@ -58,15 +61,17 @@
 	 		<input type="hidden" id="hidItemIDSave"
 	 		name="hidItemIDSave" value="">
 		</form>
-	<div id="alertSuccess" class="alert alert-success"></div>
-	<div id="alertError" class="alert alert-danger"></div>
-	<br>
-	<div id="divItemsGrid">
- <%
- Complaint complaintObj = new Complaint();
- out.print(complaintObj.ViewAllComplaints());
- %>
+		<div id="alertSuccess" class="alert alert-success"></div>
+		<div id="alertError" class="alert alert-danger"></div>
+		<br>
+		<div id="divItemsGrid">
+		<%
+		Complaint complaintObj = new Complaint();
+		out.print(complaintObj.ViewAllComplaints());
+		%>
+		</div>
+		</div> 
+	</div> 
 </div>
-</div> </div> </div>
 </body>
 </html>
